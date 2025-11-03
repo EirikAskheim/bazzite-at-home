@@ -32,6 +32,7 @@ modules:
         - edk2-ovmf
         - qemu
         - git-lfs
+        - git-delta
     remove:
       packages:
         - firefox

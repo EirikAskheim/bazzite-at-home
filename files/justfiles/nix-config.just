@@ -7,7 +7,7 @@ nix-setup:
     NIX_INSTALLER="https://install.determinate.systems/nix"
 
     echo "Setting up Nix package manager..."
-    curl --proto '=https' --tlv1.2 -sSf -L "$NIX_INSTALLER" | sh -s -- install --no-confirm
+    curl --proto '=https' --tlsv1.2 -sSf -L "$NIX_INSTALLER" | sh -s -- install --no-confirm
     [ -f "$NIX_DAEMON_SCRIPT" ] && . "$NIX_DAEMON_SCRIPT"
     echo "Nix setup complete."
 
@@ -37,7 +37,7 @@ nixpkgs-install:
 
     echo "Setting up drivers symlink..."
     sudo rm -f "$OPENGL_SYMLINK_CONF"
-    printf "L+ /run/opengl-driver - - - - %s\\nL+ /run/opengl-driver-32 - - - - %s\\n" "$OPENGL_PROFILE" "$OPENGL_PROFILE_32" | sudo tee "$OPENGL_SYMLINK_CONF"
+    printf "L+ /run/opengl-driver - - - - %s\nL+ /run/opengl-driver-32 - - - - %s\n" "$OPENGL_PROFILE" "$OPENGL_PROFILE_32" | sudo tee "$OPENGL_SYMLINK_CONF"
     sudo systemd-tmpfiles --create "$OPENGL_SYMLINK_CONF"
 
     echo "Nix packages installation complete."
