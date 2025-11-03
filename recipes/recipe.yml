@@ -14,7 +14,6 @@ modules:
     files:
       - source: system
         destination: /
-
   - type: justfiles
     validate: true
   - type: dnf
@@ -37,3 +36,10 @@ modules:
     install:
       packages:
         - zed
+  - type: dnf
+    repos:
+      copr:
+        - wezfurlong/wezterm-nightly
+    install:
+      packages:
+        - wezterm
