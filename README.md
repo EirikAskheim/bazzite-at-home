@@ -4,9 +4,12 @@ See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup i
 
 After setup, it is recommended you update this README to describe your custom image.
 
-## Installation
+Main Packages Added:
 
-> [!WARNING]  
+- Nix package manager
+- Virtualization: virt-manager, edk2-ovmf, qemu
+
+> [!WARNING]
 > [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable), try at your own discretion.
 
 To rebase an existing atomic Fedora installation to the latest build:
@@ -29,6 +32,12 @@ To rebase an existing atomic Fedora installation to the latest build:
   ```
 
 The `latest` tag will automatically point to the latest build. That build will still always use the Fedora version specified in `recipe.yml`, so you won't get accidentally updated to the next major version.
+
+## Additional Setup
+
+- To setup kernel args and vfio drivers for virtualization, run `setup-virtualization.sh` after booting into the image.
+- To setup nix via [determinate nix-installer](https://github.com/DeterminateSystems/nix-installer), run `ujust nix-setup`.
+
 
 ## ISO
 
