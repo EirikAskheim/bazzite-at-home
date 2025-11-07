@@ -24,6 +24,7 @@ modules:
         - qemu
         - git-lfs
         - git-delta
+        - patch
     remove:
       packages:
         - firefox
