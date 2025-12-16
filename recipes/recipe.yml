@@ -19,6 +19,7 @@ modules:
   - type: dnf
     install:
       packages:
+        - gnome-desktop4
         - virt-manager
         - edk2-ovmf
         - qemu
