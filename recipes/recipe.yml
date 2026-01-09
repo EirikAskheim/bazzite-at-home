@@ -22,7 +22,6 @@ modules:
         - virt-manager
         - edk2-ovmf
         - qemu
-        - git-lfs
         - git-delta
         - patch
     remove:
